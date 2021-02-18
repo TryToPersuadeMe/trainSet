@@ -8,11 +8,19 @@
     <meta name="description" content="крутой сайт" />
     <link href="./img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="./css/main.css" />
-    <object type="image/svg+xml" data="./resources/symbol/svg/sprite.symbol.svg"></object>
-    <title>Explem</title>
+    <title>Train Set - Главная страница</title>
   </head>
   <body>
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      @@include("./_#header.html")
+
+      <main class="container">
+        @@include("./_firstScreen.html") @@include("./_projects.html") @@include("./_aboutUs.html") @@include("./_FAQ.html")
+        @@include("./_askQuestion.html")
+      </main>
+
+      @@include("./_#footer.html")
+    </div>
 
     <!-- main js -->
     <script src="./js/main.js"></script>

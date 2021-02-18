@@ -1,0 +1,31 @@
+.buttonLink {
+  font-size: 20px;
+  font-family: Montserrat;
+  position: relative;
+  display: inline-block;
+  color: #000000;
+  &_border {
+    border: 1px solid #3b79a8;
+    padding: 8px 17px;
+    border-radius: 38px;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    margin-left: 20px;
+    transform: translateY(-50%);
+    @include backgroundImage("../resources/iconsSprite/longArrow-icon.svg", cover);
+    width: 40px;
+    height: 6px;
+  }
+}
+
+.button {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+  background: #3b79a8;
+  border-radius: 38px;
+  padding: 8px 25px;
+}
