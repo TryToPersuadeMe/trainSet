@@ -1,0 +1,98 @@
+.projects {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  position: relative;
+  &__title {
+    margin-left: 110px;
+    margin-bottom: 75px;
+  }
+}
+
+.tabs {
+  position: relative;
+
+  &__backgroundLine {
+    position: relative;
+
+    &::after,
+    &::before,
+    span {
+      content: "";
+      position: absolute;
+      top: 0;
+      min-height: $space;
+      background-color: white;
+      max-width: 100%;
+      width: 100%;
+      left: 0;
+    }
+    &::before {
+      transform: translateX(-100%);
+    }
+
+    &::after {
+      transform: translateX(100%);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 60;
+    top: 0;
+    min-height: $space;
+    left: 0;
+    max-height: $space;
+    max-width: 100%;
+    width: 100%;
+
+    .swiper-pagination-bullet {
+      font-weight: 500;
+      font-size: 24px;
+      opacity: 1;
+      width: 100%;
+      min-height: $space;
+      max-height: $space;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .swiper-pagination-bullet-active {
+      color: white;
+    }
+  }
+
+  &__scrollbar {
+    max-width: 100%;
+    width: 100%;
+    min-height: $space;
+    left: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    .swiper-scrollbar-drag {
+      border-radius: 0;
+      background-color: #3b79a8;
+    }
+  }
+
+  &__slidesContainer {
+    padding-top: $space + 10px;
+    margin-top: 90px;
+    position: relative;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    padding-bottom: 40px;
+    max-width: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="ключевые слова" />
+    <meta name="description" content="крутой сайт" />
+    <link href="./resources/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Train Set - Главная страница</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include("./_#header.html")
+
+      <main class="container">
+        @@include("./_firstScreen.html") @@include("./_projects.html") @@include("./_aboutUs.html") @@include("./_FAQ.html")
+        @@include("./_askQuestion.html")
+      </main>
+
+      @@include("./_#footer.html")
+    </div>
+
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

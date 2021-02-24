@@ -1,0 +1,28 @@
+<div class="authorization">
+  <div class="authorization__titlesLinksWrapper">
+    <p class="authorization__titleLink" data-form_button="signUpForm">Sign Up</p>
+    <p class="authorization__titleLink active" data-form_button="loginInForm">Login in</p>
+  </div>
+
+  <form action="#" class="form authorization__form active" id="loginInForm">
+    <input type="text" class="form__input" placeholder="Name" />
+    <input type="email" class="form__input" placeholder="Email" />
+    <input type="password" class="form__input" placeholder="Password" />
+    <input type="password" class="form__input" placeholder="Password Confirmation " />
+    <span class="form__errorMessage">Введенные пароли не совпадают</span>
+    <button class="form__button">Sign Up</button>
+  </form>
+
+  <form action="#" class="form authorization__form" id="signUpForm">
+    <input type="text" class="form__input" placeholder="Name" />
+    <input type="password" class="form__input" placeholder="Password" />
+    <label class="form__checkbox checkbox">
+      <input class="checkbox__realInput" type="checkbox" />
+      <span class="checkbox__icon"></span>
+      <span class="checkbox__text">Remember me</span>
+    </label>
+    <button class="form__button">Login in</button>
+
+    <a href="#" class="form__restorePassword">Forgot your password?</a>
+  </form>
+</div>
