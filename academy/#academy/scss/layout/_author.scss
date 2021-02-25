@@ -1,0 +1,27 @@
+.author {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  &__image {
+    max-width: 110px;
+    width: 100%;
+    img,
+    source {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.2;
+    &_bold {
+      font-weight: 600;
+    }
+  }
+
+  &__column {
+    margin-left: 65px;
+    align-self: flex-end;
+  }
+}

@@ -8,6 +8,12 @@
 
 .wrapper {
   overflow: hidden;
-  background-color: #e5e5e5;
+  background-color: $globalColor;
   padding: 30px 0 0 0;
+}
+
+@media (max-width: 1023px) {
+  .body-overlay {
+    overflow: hidden;
+  }
 }

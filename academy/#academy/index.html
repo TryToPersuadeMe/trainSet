@@ -6,17 +6,15 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="keywords" content="ключевые слова" />
     <meta name="description" content="крутой сайт" />
-    <link href="./img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="./resources/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Train Set - Главная страница</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" id="startPage">
       @@include("./_#header.html")
 
-      <main class="container">
-        <div class="fullHeightWrapper">@@include("_#authorization.html")</div>
-      </main>
+      <main>@@include("./_cardSection.html") </main>
 
       @@include("./_#footer.html")
     </div>
