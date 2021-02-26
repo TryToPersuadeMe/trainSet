@@ -1,7 +1,5 @@
 .projects {
   &__wrapper {
-    display: flex;
-    flex-direction: column;
     padding-top: 65px;
     padding-bottom: 110px;
   }
@@ -13,10 +11,40 @@
   &__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    gap: 20px;
   }
 
   &__button {
     margin: 65px auto 0 auto;
+    display: block;
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .projects {
+    &__row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    &__wrapper {
+      padding-bottom: 70px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .projects {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__button {
+      max-width: 150px;
+    }
   }
 }

@@ -65,3 +65,40 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .faq {
+    &__title {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    &__answer,
+    &__question {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .faq {
+    &__wrapper {
+      padding-bottom: 90px;
+    }
+    &__title {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    &__answer,
+    &__question {
+      font-size: 14px;
+    }
+
+    &__column {
+      & > *:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

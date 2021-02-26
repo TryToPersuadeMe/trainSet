@@ -18,3 +18,15 @@
   &__button {
   }
 }
+
+@media (max-width: 375px) {
+  .askQuestion {
+    &__suptitle {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    &__wrapper {
+      padding-bottom: 90px;
+    }
+  }
+}
