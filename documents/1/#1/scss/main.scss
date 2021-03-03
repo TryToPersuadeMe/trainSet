@@ -15,10 +15,7 @@
 /* components */
 @import "./components/text";
 @import "./components/buttons";
-@import "./components/card";
 @import "./components/paragraph";
-@import "./components/tags";
-// @import "./components/cardWithFixedLabels";
 @import "./components/fixedArrow";
 
 /* layout */
@@ -27,5 +24,6 @@
 @import "./layout/cardSection";
 @import "./layout/author";
 @import "./layout/navigationSlider";
+@import "./layout/tableOfContent";
 
 /* pages */

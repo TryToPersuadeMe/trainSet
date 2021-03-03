@@ -4,9 +4,9 @@
   align-items: flex-start;
   &__title {
     font-weight: 500;
-    font-size: 28px;
+    font-size: 24px;
     display: inline-flex;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     position: relative;
 
@@ -139,7 +139,6 @@
 
     &__title {
       margin-bottom: 40px;
-      font-size: 24px;
     }
 
     &__text {
@@ -172,6 +171,8 @@
       font-size: 20px;
       margin-bottom: 30px;
       &_BG {
+        text-align: center;
+        line-height: 1.4;
         max-width: 100%;
         display: flex;
         justify-content: center;

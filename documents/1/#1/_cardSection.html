@@ -8,96 +8,96 @@
 
         <div class="navigationSlider__container swiper-container">
           <div class="navigationSlider__wrapper swiper-wrapper">
-            <a href="#" class="navigationSlider__link swiper-slide">Doks</a>
-            <a href="#" class="navigationSlider__link swiper-slide active">Blog</a>
+            <a href="#" class="navigationSlider__link swiper-slide active">Doks</a>
+            <a href="#" class="navigationSlider__link swiper-slide">Blog</a>
             <a href="#" class="navigationSlider__link swiper-slide">Training</a>
           </div>
         </div>
 
         <div class="navigationSlider__arrow swiper-button-next"></div>
       </div>
+      @@include("./_tableOfContent.html")
 
-      <div class="cardSection__row">
-        <aside class="sideBar">
-          <div class="sideBar__sliderContainer swiper-container">
-            <div class="swiper-wrapper sideBar__wrapperContent">
-              <p class="sideBar__link sideBar__link_active swiper-slide">Cross-Validation the Right Way</p>
-              <a href="#" class="sideBar__link swiper-slide">Running Jupyter Notebooks on Google Cloud</a>
-            </div>
-          </div>
-        </aside>
+      <h6 class="cardSection__title">Overview</h6>
 
-        <!-- <div class="cardSection__information"> -->
-        <h5 class="cardSection__title">Cross-Validation the Right Way</h5>
+      <p class="paragraph__text">
+        Machine Learning is divided by <span class="paragraph__text_bold">2</span> sub-fields:
+        <span class="paragraph__text_bold">supervised</span> and <span class="paragraph__text_bold">unsupervised</span> learning,
+        both related to data you use to build a model.
+      </p>
 
-        <!-- <div class="paragraph"> -->
-        <h6 class="paragraph__title paragraph__title_BG">1. Introduction</h6>
-        <p class="paragraph__text">
-          I assume you know the
-          <a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation" class="paragraph__text_link"
-            >basic idea behind Cross-Validation</a
-          >
-          (CV). Here are just a few points that I consider to be important:
-        </p>
+      <ul class="paragraph__list paragraph__list_dots-type paragraph__text">
+        <li>
+          <span class="paragraph__text_bold">In supervised learning</span>, the data you use is labelled, i.e. it has a target
+          variable you need to predict, given the response variables . For example, predicting price of an apartment, given such
+          variables as: squared footage, number of rooms, district, area, number of schools nearby, etc.
+        </li>
 
-        <ol class="paragraph__list paragraph__list_ol paragraph__text">
-          <li>
-            CV is widely used for model selection, because it allows you to estimate the performance of the fitted model on unseen
-            data.
-          </li>
+        <li>
+          <span class="paragraph__text_bold"> In unsupervised learning,</span> the data you use is unlabelled, i.e. it does not
+          have a target variable Y. An example of supervised learning is grouping your customers by segment, based on their
+          characteristics (response variables).
+        </li>
+      </ul>
 
-          <li>
-            Typically you want to use:
-            <ul class="paragraph__list paragraph__list_dots-type">
-              <li>
-                <a href="https://scikit-learn.org/stable/modules/cross_validation.html#k-fold" class="paragraph__text_link"
-                  >KFold CV</a
-                >
-                for
-                <span class="paragraph__text_bold">regression</span>
-                problems
-              </li>
+      <div class="paragraph cardSection__paragraph">
+        <p class="paragraph__text">To get a little bit ahead, let’s view on the ML Mindmap, and further dissect it!</p>
+      </div>
 
-              <li>
-                <a
-                  class="paragraph__text_link"
-                  href="https://scikit-learn.org/stable/modules/cross_validation.html#stratified-k-fold"
-                  >StratifiedKFold</a
-                >
-                CV for <span class="paragraph__text_bold">classification</span> problems (especially if the distribution of target
-                labels is not uniform)
-              </li>
-            </ul>
-          </li>
-        </ol>
-        <!-- </div> -->
-        <!-- </div> -->
+      <h6 class="cardSection__title">Supervised Learning</h6>
+
+      <div class="paragraph cardSection__paragraph">
+        <p class="paragraph__text">Supervised learning is divided into two types of algorithms:</p>
       </div>
 
       <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">Classification algorithms:</h6>
+
         <p class="paragraph__text">
-          We will focus entirely on Cross-Validation, eliminating all the other steps of a data science pipeline (such as EDA,
-          pre-processing, etc). Then we will cover some of the methods for performing CV with code samples.
+          Algorithms that predict a category. Examples can be, an algorithm predicting a movie rating: “Best”, “Good”, “Bad”,
+          “Worst”; an algorithm predicting a fruit: ‘Banana’, ‘Apple’, ‘Orange’; an algorithm predicting any simple yes-no
+          question: “Yes” or “No”, etc.
         </p>
       </div>
 
       <div class="paragraph cardSection__paragraph">
-        <h6 class="paragraph__title paragraph__title_BG">2. Dependencies & Dataset</h6>
+        <h6 class="paragraph__title paragraph__title_BG">Regression algorithms: algorithms:</h6>
 
         <p class="paragraph__text">
-          In this article we will use
-          <a class="paragraph__text_link" href="https://www.kaggle.com/vikrishnan/boston-house-prices"
-            >Boston House Prices Dataset</a
-          >
-          which is a good and simple dataset for regression problem.
+          Algorithms that predict a continuous value, such as “dollars” or “weight”. Examples can be, an algorithm predicting a
+          price for the appartment; an algorithm predicting a weight of a person.
         </p>
+      </div>
 
-        <div class="gistFrame">
-          <script src="https://gist.github.com/v-popov/c5351f33cf5b4ecb75718d8b703d78e9.js"></script>
-          <p class="gistFrame__text paragraph__text">Snippet 1. Dependencies & Dataset</p>
-        </div>
+      <h6 class="cardSection__title">Unsupervised Learning</h6>
+
+      <div class="paragraph cardSection__paragraph">
+        <p class="paragraph__text">Unsupervised learning is divided into two types of algorithms:</p>
+      </div>
+
+      <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">Clustering algorithms: algorithms:</h6>
+
         <p class="paragraph__text">
-          As you can see from Snippet 1, the dataset contains 506 records with 13 features and 1 target variable.
+          Algorithms that group data based on common characterists that the model would find in the dataset. Examples can be, an
+          algorithm segmenting customers in a market.
+        </p>
+      </div>
+
+      <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">Generation algorithms:</h6>
+
+        <p class="paragraph__text">
+          AlgAlgorithms that generates data, it mostly related to Natural Language Processing, e.g. generating text.
+        </p>
+      </div>
+
+      <!--       <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">Regression algorithms: algorithms:</h6>
+
+        <p class="paragraph__text">
+          Algorithms that predict a continuous value, such as “dollars” or “weight”. Examples can be, an algorithm predicting a
+          price for the appartment; an algorithm predicting a weight of a person.
         </p>
       </div>
 
@@ -310,7 +310,7 @@
           </li>
           <li><a href="" class="paragraph__text paragraph__text_link">Optuna suggest options </a></li>
         </ul>
-      </div>
+      </div> -->
     </div>
     @@include("./_author.html") @@include("./_fixedArrow.html")
   </div>
