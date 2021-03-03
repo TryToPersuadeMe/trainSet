@@ -4510,7 +4510,6 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: Oswald;
   font-size: 36px;
   color: #707070;
-  cursor: pointer;
 }
 
 .authorization__titleLink.active {
