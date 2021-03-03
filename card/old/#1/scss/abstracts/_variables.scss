@@ -1,0 +1,20 @@
+// Sass Variables
+$body-html-px: 10px;
+
+/* space for project bar */
+$space: 90px;
+
+/* exemple - .overlay {
+  z-index: z(overlay);
+}
+ */
+
+$z-layers: (
+  sliderPagination: 80,
+  sliderScrollBar: 71,
+  sliderScrollBar-drag: 71,
+  header: 15,
+  burgerIcon: 16 // dropdown: 3000,
+  // overlay: 4000 modal: 4001,,,
+);
+$globalColor: #e5e5e5;

@@ -1,0 +1,245 @@
+.projects {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  position: relative;
+  &__title {
+    margin-bottom: 75px;
+  }
+}
+
+.cardSection {
+  &__navigationSlider {
+    margin-bottom: 60px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 70px;
+    justify-items: space-between;
+    margin-bottom: 55px;
+  }
+  &__paragraph {
+    margin-bottom: 56px;
+  }
+
+  &__nestedPicture {
+    margin: 0 auto 50px auto;
+  }
+
+  &__information {
+    & > *:not(:last-child) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__buttonWrapper {
+    display: flex;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 60px;
+    display: flex;
+    padding-top: 15px;
+    padding-left: 10px;
+  }
+
+  &__button {
+    width: 100%;
+    min-height: 53px;
+    max-height: 53px;
+    &:first-of-type {
+      margin-right: 20px;
+    }
+  }
+
+  .gistFrame {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
+}
+
+.sideBar {
+  float: left;
+  min-height: 570px;
+  display: block;
+  margin: 0 70px 15px 0;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0px;
+  padding: 50px 25px 25px;
+  position: relative;
+  z-index: 1;
+  max-width: 19.8vw;
+  min-width: 320px;
+  width: 100%;
+
+  & > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background-color: #e5e5e5;
+    left: 0px;
+    z-index: 1;
+    display: block;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  &__link {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 130.19%;
+    color: #000000;
+
+    &_active {
+      color: #3b79a8;
+    }
+  }
+}
+
+.navigationSlider {
+  position: relative;
+  background-color: white;
+  z-index: 5;
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    z-index: -1;
+  }
+  &::after {
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    transform: translateX(50%);
+    right: 0;
+  }
+
+  &__arrow {
+    @include backgroundImage("../resources/icons/sideArrow-icon.svg", none);
+    border-radius: 100%;
+    width: 40px;
+    background-color: #e8e8e8;
+    height: 40px;
+    z-index: 3;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    background-color: white;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: $space;
+    // display: grid;
+    display: flex;
+    justify-content: center;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    border: 1px solid #000;
+    margin-bottom: 100px;
+    z-index: 3;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-align: center;
+    height: $space;
+    transition: 0.5s ease;
+
+    &.active {
+      color: white;
+      background: #3b79a8;
+    }
+    &:hover:not(.active) {
+      color: white;
+      background-color: rgba(129, 185, 228, 1);
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .projects {
+    &__title {
+      margin-left: 110px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sideBar {
+    padding-left: 0;
+    margin: 0 50px 15px 0;
+
+    &:before {
+      background-color: inherit;
+    }
+    &__link {
+      font-size: 22px;
+    }
+  }
+
+  .cardSection {
+    &__row {
+      // gap: 50px;
+      // grid-template-columns: 1.2fr 2fr;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navigationSlider {
+    &__container {
+      max-width: 80%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .cardSection {
+    &__paragraph {
+      margin-bottom: 30px;
+    }
+  }
+
+  .cardSection {
+    .gist iframe.render-viewer {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .cardSection {
+    .gist iframe.render-viewer {
+      height: 200px;
+    }
+  }
+}
