@@ -1,0 +1,15 @@
+.codeFrame {
+  max-width: 100%;
+  width: 100%;
+  background-color: white;
+  padding: 30px 40px;
+  &__text {
+    color: #05b98b;
+    display: flex;
+    align-items: center;
+    @extend .paragraph__text;
+    &:not(:last-of-type) {
+      margin-bottom: 0px;
+    }
+  }
+}
