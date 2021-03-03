@@ -18,6 +18,7 @@
   &__titleLink {
     font-family: Oswald;
     font-size: 36px;
+    width: 100%;
     color: #707070;
     cursor: pointer;
     &.active {
@@ -65,18 +66,35 @@
 
   &__input {
     border: 1px solid #3b79a8;
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 16px;
     font-size: 20px;
+    transition: 0.3s ease;
+
     &::placeholder {
       @include placeholder;
     }
+  }
+
+  &__textArea {
+    height: 240px;
+    resize: none;
+    padding: 20px;
+    border-radius: 25px;
   }
 
   &__button {
     background: #3b79a8;
     color: #ffffff;
     font-size: 18px;
+    border: 1px solid #3b79a8;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: white;
+      box-shadow: 0px 0px 15px #3b79a8;
+      color: #3b79a8;
+    }
   }
 
   &__checkbox,
@@ -92,5 +110,68 @@
   &__checkbox {
     margin-top: 9px;
     margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .authorization {
+    max-width: 350px;
+    &__titleLink {
+      font-size: 30px;
+      &.active {
+        width: 100%;
+        font-size: 36px;
+      }
+    }
+    &__titlesLinksWrapper {
+      margin-bottom: 40px;
+    }
+  }
+
+  .form {
+    &__input,
+    &__button {
+      min-height: 50px;
+      font-size: 16px;
+    }
+
+    &__errorMessage {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .authorization {
+    max-width: 275px;
+    &__titleLink {
+      font-size: 18px;
+      &.active {
+        font-size: 24px;
+      }
+    }
+    &__titlesLinksWrapper {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form {
+    &__input,
+    &__button {
+      font-size: 14px;
+      min-height: 40px;
+    }
+
+    &__textArea {
+      height: 200px;
+    }
+
+    &__restorePassword {
+      font-size: 12px;
+    }
+
+    &__errorMessage {
+      font-size: 10px;
+    }
   }
 }

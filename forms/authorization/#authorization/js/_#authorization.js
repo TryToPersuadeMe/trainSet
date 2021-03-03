@@ -23,7 +23,7 @@ const toggleElements = (form, button, container) => {
 toggleElements("authorization__titleLink", "authorization__form", ".authorization");
 
 const validation = () => {
-  const $form = document.querySelector("#loginInForm");
+  const $form = document.querySelector("#signUpForm");
   const passwordFields = $form.querySelectorAll(`input[type="password"]`);
   const $errorMessage = $form.querySelector(".form__errorMessage");
 

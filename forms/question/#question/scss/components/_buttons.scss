@@ -64,3 +64,34 @@
     }
   }
 }
+
+
+.checkbox {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  &__text {
+    color: #707070;
+    font-size: 18px;
+  }
+  &__realInput {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__icon {
+    margin-right: 15px;
+    display: block;
+    border: 1px solid #3b79a8;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s ease;
+  }
+
+  &__realInput:checked + &__icon {
+    @include backgroundImage("../resources/iconsSprite/checkMark-icon.svg", contain);
+    background-size: 70%;
+    background-color: #3b79a8;
+  }
+}
