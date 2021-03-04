@@ -19,8 +19,12 @@
 
       <div class="cardSection__row">
         <aside class="sideBar">
-          <p class="sideBar__link">Cross-Validation the Right Way</p>
-          <a href="#" class="sideBar__link sideBar__link_active">Running Jupyter Notebooks on Google Cloud</a>
+          <div class="sideBar__sliderContainer swiper-container">
+            <div class="swiper-wrapper sideBar__wrapperContent">
+              <a href="#" class="sideBar__link swiper-slide">Cross-Validation the Right Way</a>
+              <p class="sideBar__link swiper-slide sideBar__link_active">Running Jupyter Notebooks on Google Cloud</p>
+            </div>
+          </div>
         </aside>
 
         <!-- <div class="cardSection__information"> -->
@@ -36,39 +40,6 @@
           project or create a new one over
           <a href="https://console.cloud.google.com/projectcreate" class="paragraph__text_link">here</a>.
         </p>
-
-        <!-- <ol class="paragraph__list paragraph__list_ol paragraph__text">
-          <li>
-            CV is widely used for model selection, because it allows you to estimate the performance of the fitted model on unseen
-            data.
-          </li>
-
-          <li>
-            Typically you want to use:
-            <ul class="paragraph__list paragraph__list_dots-type">
-              <li>
-                <a href="https://scikit-learn.org/stable/modules/cross_validation.html#k-fold" class="paragraph__text_link"
-                  >KFold CV</a
-                >
-                for
-                <span class="paragraph__text_bold">regression</span>
-                problems
-              </li>
-
-              <li>
-                <a
-                  class="paragraph__text_link"
-                  href="https://scikit-learn.org/stable/modules/cross_validation.html#stratified-k-fold"
-                  >StratifiedKFold</a
-                >
-                CV for <span class="paragraph__text_bold">classification</span> problems (especially if the distribution of target
-                labels is not uniform)
-              </li>
-            </ul>
-          </li>
-        </ol> -->
-        <!-- </div> -->
-        <!-- </div> -->
       </div>
 
       <div class="nestedPicture cardSection__nestedPicture">
@@ -177,8 +148,8 @@
         <p class="paragraph__text">In your SSH terminal, enter:</p>
 
         <pre class="codeFrame cardSection__paragraph">
-          <code class="codeFrame__text">wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh</code>
-          <code class="codeFrame__text">bash Anaconda3-4.0.0-Linux-x86_64.sh</code>
+              <code class="codeFrame__text">wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh</code>
+              <code class="codeFrame__text">bash Anaconda3-4.0.0-Linux-x86_64.sh</code>
         </pre>
 
         <p class="paragraph__text">

@@ -25,6 +25,10 @@ var navPanel = new Swiper(".navigationSlider__container", {
 var sidebar = new Swiper(".sideBar__sliderContainer", {
   slidesPerView: 1.4,
 
+
+
+
+  
   spaceBetween: 30,
   // navigation: {
   //   nextEl: ".swiper-button-next",
