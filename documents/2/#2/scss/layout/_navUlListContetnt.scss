@@ -1,0 +1,139 @@
+.navUlListContetnt {
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 150px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 48px;
+    font-family: Oswald;
+    margin-bottom: 30px;
+    color: #000000;
+  }
+
+  &__linksWrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__link {
+    font-size: 18px;
+    color: #000000;
+    transition: 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &_big {
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    &_active {
+      color: #3b79a8;
+    }
+
+    &_big,
+    &_active {
+      &:hover {
+        transform: scale(1);
+        cursor: default;
+      }
+    }
+  }
+
+  .author__text {
+    font-size: 18px;
+  }
+  .author > *:first-child {
+    margin-right: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navUlListContetnt {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__row {
+      row-gap: 100px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .navUlListContetnt {
+    .author {
+      align-items: flex-end;
+    }
+
+    &__responsiveTitle-js {
+      grid-column: 1/2 span;
+      order: 3;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navUlListContetnt {
+    text-align: center;
+    &__row {
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+      justify-items: center;
+      gap: 60px;
+    }
+
+    &__link {
+      &_big {
+        font-size: 20px;
+      }
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__responsiveTitle-js {
+      margin: 0;
+    }
+    &__linksWrapper {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .navUlListContetnt {
+    &__row {
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+      justify-items: center;
+    }
+
+    &__responsiveTitle-js {
+      margin: 0;
+    }
+    &__linksWrapper {
+      align-items: center;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    .author {
+      flex-direction: column;
+      & > *:first-child {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+}
