@@ -1081,6 +1081,10 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 40px;
 }
 
+.paragraph__text_big {
+  font-size: 28px;
+}
+
 .paragraph__text_italic {
   font-style: italic;
 }
@@ -1263,6 +1267,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .paragraph__text {
     font-size: 18px;
   }
+  .paragraph__text_big {
+    font-size: 24px;
+  }
   .paragraph__list_nestedPicture {
     margin: 20px 0;
     display: inline-block;
@@ -1299,9 +1306,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .paragraph__title_BG {
     padding: 15px 5px 15px 5px;
-  }
-  .paragraph__text {
-    font-size: 14px;
   }
 }
 

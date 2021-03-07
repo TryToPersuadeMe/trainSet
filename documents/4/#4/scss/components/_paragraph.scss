@@ -44,6 +44,11 @@
     &:not(:last-of-type) {
       margin-bottom: 40px;
     }
+
+    &_big {
+      font-size: 28px;
+    }
+
     &_italic {
       font-style: italic;
     }
@@ -229,6 +234,9 @@
 
     &__text {
       font-size: 18px;
+      &_big {
+        font-size: 24px;
+      }
     }
 
     &__list {
@@ -271,10 +279,6 @@
       &_BG {
         padding: 15px 5px 15px 5px;
       }
-    }
-
-    &__text {
-      font-size: 14px;
     }
   }
 }

@@ -23,130 +23,123 @@
         <h6 class="paragraph__title paragraph__title_BG">1. Introduction</h6>
 
         <p class="paragraph__text">
-          Naive Bayes is so ‘naive’ because it assumes that all of the features in a data set are equally important and
-          independent. These assumptions are rarely true in real world scenario, however Naive Bayes algorithm sometimes performs
-          surprisingly well. This is the supervised learning algorithm used for both classification and regression. Its advantage
-          is that it requires very small computational power and as a result works fast even with large data.
+          Labels are an essential ingredient to supervised algorithms like Support Vector Machines, which learns a hypothesis
+          function to predict labels given features. K-means clustering is a type of unsupervised learning, which is used when you
+          have unlabeled data (i.e., data without defined categories/groups/response variables).
         </p>
       </div>
 
       <div class="paragraph cardSection__paragraph">
         <h6 class="paragraph__title paragraph__title_BG">2. Key Terms</h6>
 
-        <ul class="paragraph__list paragraph__list_dots-type paragraph__text">
-          <li>Prior probability is the proportion of dependent variable (target) in the data set.</li>
+        <ul class="paragraph__text paragraph__list paragraph__list_dots-type">
           <li>
-            Likelihood is the probability of particular classification a given observation in presence of some other variable.
+            <span class="paragraph__text_bold">CLuster:</span> is a collection of data points aggregated together because of
+            certain similarities.
           </li>
 
-          <li>Marginal likelihood is the proportion of independent variable (predictor) in the data set.</li>
+          <li>
+            <span class="paragraph__text_bold">CLuster Centroid</span> (or simply
+            <span class="paragraph__text_bold">centroid</span>) is the mean of a cluster, its values are the coordinate-wise
+            average of the data points in this cluster.
+          </li>
+
+          <li>
+            <span class="paragraph__text_bold">Within-Cluster Varianceis</span> the coordinate-wise squared deviations from the
+            cluster centroid of all the observations belonging to that cluster:
+          </li>
         </ul>
 
         <p class="paragraph__text">
-          These terms might not be clear to you. Let’s dive into an example that shows what exactly Naive Bayes does, with an
-          indication of these terms.
+          In the expression above denotes j-th predictor of observation ; denotes a set of points belonging to cluster and denotes
+          a centroid of cluster
+        </p>
+
+        <ul class="paragraph__text paragraph__list paragraph__list_dots-type">
+          <li>Total Within-Cluster Varianceis a within-cluster variance summed up across all clusters:</li>
+        </ul>
+
+        <p class="paragraph__text">Note that the notation means the euclidean distance between vectors and</p>
+      </div>
+
+      <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">3. Data Representation and Preparation</h6>
+
+        <p class="paragraph__text">
+          In the formulas above represents a vector in a P-dimensional space and P is a number of predictors in data set. As you
+          can see from the formulas above, K-Means algorithm utilizes the notion of distance between data points and each data
+          point weights equally. In order to calculate the distance, we need our data to be numerical. For this reason,
+          categorical values should be handled (either excluded from the list of predictors or replaced with numerical values).
+          Also, we need to normalize our data in order to avoid the effects of incomparable units and different scaling.
         </p>
       </div>
 
       <div class="paragraph cardSection__paragraph">
-        <h6 class="paragraph__title paragraph__title_BG">3. Example with Explanation</h6>
+        <h6 class="paragraph__title paragraph__title_BG">4. Algorithm</h6>
 
         <p class="paragraph__text">
-          Below I have a training data set of weather and corresponding target variable ‘Play’ (suggesting possibilities of
-          playing). Now, we need to classify whether players will play or not based on weather condition. Let’s follow the below
-          steps to perform Naive Bayes:
+          K-Means algorithm finds cluster centers that minimize the total within-cluster variance . This is achieved in several
+          steps:
         </p>
 
-        <ul class="paragraph__list paragraph__list_dots-type paragraph__text">
-          <li>Step 1: Convert the data set into a frequency table (also called contingency table)</li>
-          <li>Step 2: Create Likelihood table.</li>
+        <ul class="paragraph__text paragraph__list paragraph__list_dots-type">
+          <li><span class="paragraph__text_bold">Step 1:</span> Randomly generate K centroids</li>
+          <li><span class="paragraph__text_bold">Step 2:</span> Assign data points to the cluster of the closest centroid:</li>
+          <li><span class="paragraph__text_bold">Step 3:</span> Compute the mean of each cluster</li>
+
           <li>
-            Step 3: Use Naive Bayesian equation to calculate the posterior probability for each class. The class with the highest
-            posterior probability is the outcome of prediction.
+            <span class="paragraph__text_bold">Step 4:</span> Reassign centroids to respective clusters’ means computed in Step 3
           </li>
+
+          <li><span class="paragraph__text_bold">Step 5:</span> If the stop criterion is not satisfied: Go to Step 2</li>
         </ul>
 
-        <p class="paragraph__text paragraph__text_bold paragraph__text_big">3.1. Step 1 and Step 2</p>
+        <p class="paragraph__text"><span class="paragraph__text_bold">Stop criterion</span> can be one of the following:</p>
 
+        <ol class="paragraph__text paragraph__list paragraph__list_bold-marker">
+          <li>Cluster re-assignation results in same clusters</li>
+          <li>A specified number of iterations is reached</li>
+          <li>Reassigned centroids are located close (need to specify the distance) to the previous centroids</li>
+        </ol>
         <p class="paragraph__text">
-          Let’s go over the first two steps. These steps will also help us understand prior probability, likelihood and marginal
-          likelihood.
+          In order to achieve <span class="paragraph__text_bold">global optima</span>, the algorithm should be run multiple times
+          and clusters’ realization that is observed more often will be our global optima.
         </p>
 
-        <div class="nestedPicture cardSection__nestedPicture">
+        <p class="paragraph__text">
+          Example: In Figure 1, you can see a K-means algorithm. Training examples are shown as dots, and cluster centroids (K)
+          are shown as crosses. (a) is an original dataset. (b) is a random initial cluster centroids. (c-f) is an illustration of
+          running two iterations of k-means. In each iteration, we assign each training example to the closest cluster centroid
+          (shown by ”painting” the training examples the same color as the cluster centroid to which is assigned); then we move
+          each cluster centroid to the mean of the points assigned to it.
+        </p>
+
+        <div class="nestedPicture cardSection__nestedPicture ">
           <div class="nestedPicture__image"><img src="./resources/images/academy/1.png" alt="#" /></div>
         </div>
 
-        <p class="paragraph__text">
-          The terms Likelihood, Marginal Likelihood, and Prior Probability (or Class Prior Probability, as it is related to
-          classes “Yes” or “No”) that were mentioned above are shown below
-        </p>
+        <!-- for space bettween image and text -->
+        <p class="paragraph__text"></p>
 
-        <div class="nestedPicture cardSection__nestedPicture">
-          <div class="nestedPicture__image"><img src="./resources/images/academy/2.png" alt="#" /></div>
-        </div>
+      </div>
 
-        <p class="paragraph__text">So, we can now see that:</p>
+      <div class="paragraph cardSection__paragraph">
+        <h6 class="paragraph__title paragraph__title_BG">5. Choosing K</h6>
 
-        <ul class="paragraph__list paragraph__list_dots-type paragraph__text">
-          <li>Likelihood = P (Feature & #124 Class)</li>
-          <li>Marginal Likelihood = P (Feature)</li>
-          <li>Prior Likelihood = P (Class)</li>
-        </ul>
+        <p class="paragraph__text">There are three most common ways of selecting the number of clusters K.</p>
 
-        <p class="paragraph__text">
-          Likelihood is just a probability of a feature within a class. For example, if we want to calculate P(Sunny $$ $$ “Yes”),
-          where Sunny is a feature, and “Yes” is a class, we will count all “Yes”es, or all times we went to Play, (and ignore
-          “No”s) when we had “Sunny” weather, divided by the overall observed days in our data set.
-        </p>
-
-        <p class="paragraph__text">
-          Marginal Likelihood is a probability of a feature. For example, if we want to calculate P(Sunny), we will count all the
-          Sunny days divided by the overall observed days in our data set.
-        </p>
-        <p class="paragraph__text">
-          Prior Likelihood or Class Prior Probability is a probability of a class. For example, if we want to calculate P(“No”),
-          we will count all the “No”s, or, the days we did not go to Play, divided by the overall observed days in our data set.
-        </p>
-        <p class="paragraph__text">
-          Posterior probability is the revised probability of an event occurring after taking into consideration new information.
-          It will be discussed in more details later in this article.
-        </p>
-
-        <p class="paragraph__text paragraph__text_bold paragraph__text_big">3.2. Step 3</p>
-
-        <p class="paragraph__text">
-          Use Bayes’ Formula to calculate the posterior probability for each class. The class with the highest posterior
-          probability is the outcome of prediction.
-        </p>
-
-        <div class="nestedPicture cardSection__nestedPicture">
-          <div class="nestedPicture__image"><img src="./resources/images/academy/3.png" alt="#" /></div>
-        </div>
-
-        <p class="paragraph__text">
-          In formula above ’c’ denotes class and ’x’ denotes features. Next, let’s look at P(x). As you can see, the denominator
-          contains the only term that is a function of the data (features) - it is not a function of the class we are currently
-          looking at. Thus, it will be the same for all the classes. Traditionally in Naive Bayes Classification, we drop this
-          denominator as it does not impact the final outcome of the classifier in order to make the prediction:
-        </p>
-        <p class="paragraph__text">||</p>
-        <p class="paragraph__text">To make it more interesting, let’s assume we have an the additional feature - Wind:</p>
-
-        <div class="nestedPicture cardSection__nestedPicture">
-          <div class="nestedPicture__image"><img src="./resources/images/academy/4.png" alt="#" /></div>
-        </div>
-        <p class="paragraph__text">Let’s assume we want to predict the class for the data with the following features:</p>
-        <p class="paragraph__text">
-          In order to make a prediction we need to compare posterior probabilities for each class after observing the input data.
-          For this purpose we will use the expression (1). Do not forget, that Naive Bayes assumes independence of features. In
-          order not to inflate our formulas we will use the following notation: ’X1’ for ’Weather’, ’X2’ for ’Wind’ and ’C’ for
-          ’Class’
-        </p>
-        <p class="paragraph__text">
-          First, we estimate the probability for going to Play (i.e. the class = “Yes”) for Wind = Moderate, Weather = Sunny:
-        </p>
-        <p class="paragraph__text">TBD….</p>
+        <ol class="paragraph__text paragraph__list paragraph__list_bold-marker">
+          <li>
+            Utilize our domain knowledge or any other insight about the data. For instance, we want to cluster flower and we know
+            that our data contains exactly 3 types of flowers. Another example is when we want to cluster cars sold last year. In
+            this case, K will be the number of all car manufacturers available on the market.
+          </li>
+          <li>
+            Run the algorithms several times for different values of K and select such K that results in the smallest value of
+            total within-cluster variance.
+          </li>
+          <li>Perform cross-validation and select such K that performs the best on a hold-out dataset.</li>
+        </ol>
       </div>
     </div>
 

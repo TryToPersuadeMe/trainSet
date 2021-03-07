@@ -44,6 +44,11 @@
     &:not(:last-of-type) {
       margin-bottom: 40px;
     }
+
+    &_big {
+      font-size: 28px;
+    }
+
     &_italic {
       font-style: italic;
     }
@@ -102,6 +107,25 @@
     list-style-position: inside;
     margin-bottom: 20px;
 
+    &_nestedPicture {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      & > *:first-child {
+        margin-right: 50px;
+      }
+      .nestedPicture__image {
+        max-width: 487px;
+        width: 100%;
+      }
+    }
+
+    &_bold-marker {
+      li::marker {
+        font-weight: 500;
+      }
+    }
+
     &_inner {
       margin: 0 0 15px 35px;
     }
@@ -124,8 +148,10 @@
           left: 0;
           background-color: black;
           display: inline-block;
-          width: 8px;
-          height: 8px;
+          min-width: 8px;
+          min-height: 8px;
+          max-width: 8px;
+          max-height: 8px;
           border-radius: 100%;
           margin: 0 10px;
         }
@@ -208,9 +234,26 @@
 
     &__text {
       font-size: 18px;
+      &_big {
+        font-size: 24px;
+      }
     }
 
     &__list {
+      &_nestedPicture {
+        margin: 20px 0;
+        display: inline-block;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .nestedPicture__image {
+          margin: 20px 0;
+        }
+        & > *:first-child {
+          margin: 20px 0;
+        }
+      }
+
       &_inner {
         margin: 0 0 15px 20px;
       }
@@ -236,10 +279,6 @@
       &_BG {
         padding: 15px 5px 15px 5px;
       }
-    }
-
-    &__text {
-      font-size: 14px;
     }
   }
 }

@@ -1081,6 +1081,10 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 40px;
 }
 
+.paragraph__text_big {
+  font-size: 28px;
+}
+
 .paragraph__text_italic {
   font-style: italic;
 }
@@ -1145,6 +1149,29 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 20px;
 }
 
+.paragraph__list_nestedPicture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.paragraph__list_nestedPicture > *:first-child {
+  margin-right: 50px;
+}
+
+.paragraph__list_nestedPicture .nestedPicture__image {
+  max-width: 487px;
+  width: 100%;
+}
+
+.paragraph__list_bold-marker li::marker {
+  font-weight: 500;
+}
+
 .paragraph__list_inner {
   margin: 0 0 15px 35px;
 }
@@ -1171,8 +1198,10 @@ input[type="search"]::-webkit-search-results-decoration {
   left: 0;
   background-color: black;
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  max-width: 8px;
+  max-height: 8px;
   border-radius: 100%;
   margin: 0 10px;
 }
@@ -1238,6 +1267,26 @@ input[type="search"]::-webkit-search-results-decoration {
   .paragraph__text {
     font-size: 18px;
   }
+  .paragraph__text_big {
+    font-size: 24px;
+  }
+  .paragraph__list_nestedPicture {
+    margin: 20px 0;
+    display: inline-block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .paragraph__list_nestedPicture .nestedPicture__image {
+    margin: 20px 0;
+  }
+  .paragraph__list_nestedPicture > *:first-child {
+    margin: 20px 0;
+  }
   .paragraph__list_inner {
     margin: 0 0 15px 20px;
   }
@@ -1257,9 +1306,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .paragraph__title_BG {
     padding: 15px 5px 15px 5px;
-  }
-  .paragraph__text {
-    font-size: 14px;
   }
 }
 
