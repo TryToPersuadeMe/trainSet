@@ -1,0 +1,280 @@
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    display: inline-flex;
+    margin-bottom: 20px;
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      min-width: 200%;
+      width: 100%;
+      background-color: inherit;
+    }
+
+    &::before {
+      left: 5px;
+      transform: translateX(-100%);
+    }
+
+    &::after {
+      transform: translateX(100%);
+      right: 5px;
+    }
+
+    &_BG {
+      background: #fff8d4;
+      padding: 25px 75px 25px 5px;
+      min-height: 54px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 193.9%;
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+    &_italic {
+      font-style: italic;
+    }
+    &_bold {
+      font-weight: 600;
+    }
+    &_link {
+      text-decoration: underline;
+    }
+    &_centered {
+      text-align: center;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &_math-code {
+      margin: 0 auto 40px auto;
+
+      line-height: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      &::before {
+        display: none !important;
+      }
+    }
+
+    &_indent {
+      margin-left: 30px;
+    }
+
+    &_blue,
+    &_link {
+      color: #3b79a8;
+    }
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__image {
+    margin-right: 50px;
+    max-width: 100px;
+    width: 100%;
+    img,
+    source {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__list {
+    list-style-position: inside;
+    margin-bottom: 20px;
+
+    &_nestedPicture {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      & > *:first-child {
+        margin-right: 50px;
+      }
+      .nestedPicture__image {
+        max-width: 487px;
+        width: 100%;
+      }
+    }
+
+    &_bold-marker {
+      li::marker {
+        font-weight: 500;
+      }
+    }
+
+    &_inner {
+      margin: 0 0 15px 35px;
+    }
+
+    &_lower-alpha {
+      list-style-type: lower-alpha;
+      li::marker {
+        font-style: italic;
+        font-weight: 500;
+      }
+    }
+
+    &_dots-type {
+      li {
+        position: relative;
+        &::before {
+          content: "";
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          background-color: black;
+          display: inline-block;
+          min-width: 8px;
+          min-height: 8px;
+          max-width: 8px;
+          max-height: 8px;
+          border-radius: 100%;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.nestedPicture {
+  &__image {
+    margin-bottom: 20px;
+    max-width: 900px;
+    width: 100%;
+
+    img,
+    source {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .paragraph {
+    &_withImage {
+    }
+
+    &__introduction {
+      $this: ".paragraph";
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__text {
+      font-size: 22px;
+      line-height: 1.5;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+
+      &_math-code {
+        margin: 0 auto 20px auto;
+      }
+    }
+
+    &__list {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .paragraph {
+    &__title {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .paragraph {
+    &__title {
+      font-size: 20px;
+      margin-bottom: 30px;
+      &_BG {
+        text-align: center;
+        line-height: 1.4;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 25px 5px 25px 5px;
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+
+    &__list {
+      &_nestedPicture {
+        margin: 20px 0;
+        display: inline-block;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .nestedPicture__image {
+          margin: 20px 0;
+        }
+        & > *:first-child {
+          margin: 20px 0;
+        }
+      }
+
+      &_inner {
+        margin: 0 0 15px 20px;
+      }
+
+      &_dots-type {
+        li {
+          position: relative;
+          padding-left: 15px;
+          &::before {
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .paragraph {
+    &__title {
+      font-size: 18px;
+      &_BG {
+        padding: 15px 5px 15px 5px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
