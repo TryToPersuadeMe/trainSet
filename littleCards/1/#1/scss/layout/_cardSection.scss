@@ -1,0 +1,167 @@
+.projects {
+  padding-top: 90px;
+  padding-bottom: 80px;
+  position: relative;
+  &__title {
+    margin-bottom: 75px;
+  }
+
+  &__changePageNav {
+    margin-top: 40px;
+  }
+}
+
+.cardSection {
+  &__navigationSlider {
+    margin-bottom: 60px;
+  }
+
+  &__gridWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 55px;
+  }
+
+  &__paragraph {
+    margin-bottom: 56px;
+  }
+
+  &__nestedPicture {
+    margin: 0 auto 50px auto;
+  }
+
+  &__information {
+    max-width: 680px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  &__buttonWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 288px));
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 36px;
+    display: flex;
+    padding-top: 15px;
+    padding-left: 10px;
+  }
+
+ 
+
+  &__button {
+    width: 100%;
+    min-height: 53px;
+    max-height: 53px;
+  }
+
+  .gistFrame {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
+}
+
+@media (max-width: 1300px) {
+  .cardSection {
+    &__gridWrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cardSection {
+    &__navigationSlider {
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 40px;
+    }
+
+    &__information {
+      gap: 40px;
+    }
+    &__buttonWrapper {
+      order: 2;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .projects {
+    &__title {
+      margin-left: 110px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardSection {
+    &__buttonWrapper {
+      font-size: 36px;
+      grid-template-columns: repeat(auto-fill, 230px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cardSection {
+    &__title {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .cardSection {
+    &__paragraph {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin: 0;
+    }
+    &__buttonWrapper {
+      grid-template-columns: repeat(auto-fill, 200px);
+    }
+  }
+
+  .cardSection {
+    .gist iframe.render-viewer {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .cardSection {
+    .gist iframe.render-viewer {
+      height: 200px;
+    }
+  }
+}
