@@ -1,0 +1,109 @@
+/* slow scroll */
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (let anchor of anchors) {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const blockID = anchor.getAttribute("href").substr(1);
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+}
+
+var swiper = new Swiper(".navigationSlider__container", {
+  spaceBetween: 30,
+  watchOverflow: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    // when window width is >= 320px
+    375: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    575: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 640px
+    769: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+var projectSlider = new Swiper(".projects__slider", {
+  slidesPerView: 1,
+  speed: 600,
+  allowTouchMove: false,
+  autoHeight: true,
+  spaceBetween: 100,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: false,
+    hide: false,
+  },
+});
+
+const customPagination = () => {
+  const $wrapper = document.querySelector(".navigationSlider__wrapper");
+  const $bullet = $wrapper.querySelectorAll(".navigationSlider__link");
+  const $slide = document.querySelectorAll(".cardSection__gridWrapper");
+
+  $bullet.forEach((value, index) => {
+    value.setAttribute("index", index);
+    $slide[index].setAttribute("index", index);
+  });
+
+  $wrapper.addEventListener("click", () => {
+    let currentBullet = event.target.getAttribute("index");
+    projectSlider.slideTo(currentBullet);
+    $bullet.forEach((value) => value.classList.remove("active"));
+    event.target.classList.add("active");
+  });
+};
+
+customPagination();
+;
+class ResponsiveBlock {
+  constructor(props) {
+    this.$block = document.querySelector(props.block);
+    this.$newParent = document.querySelector(props.newParent);
+    this.$oldParent = document.querySelector(props.oldParent);
+    this.windowWidth = props.windowWidth;
+
+    this.togglePosition();
+    this.windowEventHandler();
+  }
+
+  moveBlock(parent) {
+    parent.prepend(this.$block);
+  }
+
+  togglePosition() {
+    if (window.innerWidth < this.windowWidth) {
+      this.moveBlock(this.$newParent);
+    } else {
+      this.moveBlock(this.$oldParent);
+    }
+  }
+
+  windowEventHandler() {
+    window.addEventListener("resize", () => {
+      this.togglePosition();
+    });
+  }
+}
+
+const responsiveBlock = new ResponsiveBlock({
+  block: ".cardSection__title",
+  oldParent: ".cardSection__information",
+  newParent: ".cardSection__row",
+  windowWidth: "1200",
+});
