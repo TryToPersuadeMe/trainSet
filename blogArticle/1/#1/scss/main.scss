@@ -5,7 +5,7 @@
 
 /* vendors - code from side sources and Libraries */
 // @import "./vendors/animate.scss";
-@import "./vendors/swiper.scss";
+// @import "./vendors/swiper.scss";
 
 /* base */
 @import "./base/fonts.scss";
@@ -15,15 +15,15 @@
 /* components */
 @import "./components/text";
 @import "./components/buttons";
-@import "./components/card";
-@import "./components/paragraph";
+// @import "./components/card";
+// @import "./components/paragraph";
 @import "./components/fixedArrow";
 
 /* layout */
 @import "./layout/#header";
 @import "./layout/#footer";
-@import "./layout/cardSection";
-@import "./layout/author";
-@import "./layout/navigationSlider";
+// @import "./layout/cardSection";
+// @import "./layout/author";
+// @import "./layout/navigationSlider";
 
 /* pages */

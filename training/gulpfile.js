@@ -1,5 +1,5 @@
 let project_folder = require("path").basename(__dirname);
-let source_folder = "#1";
+let source_folder = "#training";
 
 let fs = require("fs");
 

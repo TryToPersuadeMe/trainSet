@@ -1,0 +1,32 @@
+.askQuestion {
+  &__wrapper {
+    text-align: center;
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__suptitle {
+    margin-bottom: 50px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &__button {
+  }
+}
+
+@media (max-width: 375px) {
+  .askQuestion {
+    &__suptitle {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    &__wrapper {
+      padding-bottom: 90px;
+    }
+  }
+}

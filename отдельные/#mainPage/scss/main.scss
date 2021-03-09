@@ -1,0 +1,29 @@
+/* abstracts */
+@import "./abstracts/mixins.scss";
+@import "./abstracts/variables.scss";
+@import "./abstracts/functions.scss";
+
+/* vendors - code from side sources and Libraries */
+// @import "./vendors/animate.scss";
+
+/* base */
+@import "./base/fonts.scss";
+@import "./base/reset.scss";
+@import "./base/mainContainer.scss";
+
+/* components */
+@import "./components/text";
+@import "./components/card";
+@import "./components/buttons";
+
+
+/* layout */
+@import "./layout/#header";
+@import "./layout/fristScreen";
+@import "./layout/projects";
+@import "./layout/aboutUs";
+@import "./layout/FAQ";
+@import "./layout/askQuestion";
+@import "./layout/#footer";
+
+/* pages */

@@ -14,6 +14,5 @@ for (let anchor of anchors) {
   });
 }
 
-@@include("./_#headerResponsiveMenu.js");
 @@include("./_navPanelSlider.js");
 @@include("./_responsiveBlock.js")
